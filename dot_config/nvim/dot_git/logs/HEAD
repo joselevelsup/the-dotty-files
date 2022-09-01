@@ -1,0 +1,31 @@
+0000000000000000000000000000000000000000 24b4193399358cd220a021d7a70ceb23cec2c6f2 joselevelsup <hipnotickid12@gmail.com> 1617755394 -0400	commit (initial): Initial Committing
+24b4193399358cd220a021d7a70ceb23cec2c6f2 91f16e802a97773f1b4197138f0fb70bb8118831 joselevelsup <hipnotickid12@gmail.com> 1617755593 -0400	commit: Remove NerdTree settings
+91f16e802a97773f1b4197138f0fb70bb8118831 e6641ac0099f7b565cd475ee70bacf74c0813ca3 joselevelsup <hipnotickid12@gmail.com> 1620007479 -0400	commit: moving back to coc
+e6641ac0099f7b565cd475ee70bacf74c0813ca3 baa355520c843b8ab64527a429bb53463e41a87e joselevelsup <hipnotickid12@gmail.com> 1631135691 -0400	commit: adding and editing plugins
+baa355520c843b8ab64527a429bb53463e41a87e baa355520c843b8ab64527a429bb53463e41a87e joselevelsup <hipnotickid12@gmail.com> 1631765818 -0400	reset: moving to HEAD
+baa355520c843b8ab64527a429bb53463e41a87e c1926b1bf767a46c654a8711f7839be162e19d36 joselevelsup <hipnotickid12@gmail.com> 1631765855 -0400	commit: Lazy loading plugins. Startup time 124 - 130 ms
+c1926b1bf767a46c654a8711f7839be162e19d36 880e1150ab0c89c94ec468eaae6000e3079e70ee joselevelsup <hipnotickid12@gmail.com> 1632877832 -0400	commit: switching back to native LSP...again
+880e1150ab0c89c94ec468eaae6000e3079e70ee f6d9da1735259ff5cc043e06476a85df3449d642 joselevelsup <hipnotickid12@gmail.com> 1638504874 -0500	commit: updating and adding plugins
+f6d9da1735259ff5cc043e06476a85df3449d642 d056de3de45423674f7dc42c3c6cf1a972497b06 joselevelsup <hipnotickid12@gmail.com> 1639202319 -0500	commit: adding new plugins and new headers
+d056de3de45423674f7dc42c3c6cf1a972497b06 d28d723cbad6e3fe4037a36e52fc88d1fc15b1ef joselevelsup <hipnotickid12@gmail.com> 1639203122 -0500	commit: adding quotes from DOOM but revamped
+d28d723cbad6e3fe4037a36e52fc88d1fc15b1ef 913e4c58caf8ce5c79a488be33be6242989da23b joselevelsup <hipnotickid12@gmail.com> 1640664787 -0500	commit: changing lsp for hover trigger function (borrowed from lunarvim) and editing lualine for diagnostics
+913e4c58caf8ce5c79a488be33be6242989da23b 3ef3e0dbae92e1adefb1aa3f9a657f3ab22ef197 joselevelsup <hipnotickid12@gmail.com> 1641439894 -0500	commit: updating lsp and lualine configs
+3ef3e0dbae92e1adefb1aa3f9a657f3ab22ef197 56e18fbc98c3c56b4074665dce130d88c115b2ac joselevelsup <hipnotickid12@gmail.com> 1641439938 -0500	commit: updating readme
+56e18fbc98c3c56b4074665dce130d88c115b2ac 275839fcf2488ade1b994e5b8692958ef0838062 joselevelsup <hipnotickid12@gmail.com> 1643155258 -0500	commit: using new file manager via telescope; changing lsp for diagnostics and references;
+275839fcf2488ade1b994e5b8692958ef0838062 04d10c77a94934f4058f2a6cd0b752b1ecf1bc57 joselevelsup <hipnotickid12@gmail.com> 1645589088 -0500	commit: moving back to netrw; file restructure;
+04d10c77a94934f4058f2a6cd0b752b1ecf1bc57 e0bfb7d49d1ee02e150a3d40f9d8a961f666f0b3 joselevelsup <hipnotickid12@gmail.com> 1647744479 -0400	commit: adding null-ls; changing tab bar plugin
+e0bfb7d49d1ee02e150a3d40f9d8a961f666f0b3 95b68d6bab885c88a6f07c05657778eab3dc82ba joselevelsup <hipnotickid12@gmail.com> 1649121034 -0400	commit: removing bar plugin; sticking with vanilla
+95b68d6bab885c88a6f07c05657778eab3dc82ba d5f5c9a698376829e8f881556cfe8a1eea6594ad joselevelsup <hipnotickid12@gmail.com> 1649377350 -0400	commit: fix: changing tab keymaps and adjusting telescope window;
+d5f5c9a698376829e8f881556cfe8a1eea6594ad c65a0734570a11fd7d7c9121a5158aacd119eced joselevelsup <hipnotickid12@gmail.com> 1649794501 -0400	commit: trying out goneovim
+c65a0734570a11fd7d7c9121a5158aacd119eced e9c36ff81c4bf81295d2d6112891d0ed0a47cc15 joselevelsup <hipnotickid12@gmail.com> 1652150198 -0400	commit: refactor: adding different tabline plugin and new colorscheme
+e9c36ff81c4bf81295d2d6112891d0ed0a47cc15 e9c36ff81c4bf81295d2d6112891d0ed0a47cc15 joselevelsup <hipnotickid12@gmail.com> 1656650217 -0400	reset: moving to HEAD
+e9c36ff81c4bf81295d2d6112891d0ed0a47cc15 e9c36ff81c4bf81295d2d6112891d0ed0a47cc15 joselevelsup <hipnotickid12@gmail.com> 1656650277 -0400	reset: moving to HEAD
+e9c36ff81c4bf81295d2d6112891d0ed0a47cc15 c4e5f53b7cac5cba161650635900068b326736fe joselevelsup <hipnotickid12@gmail.com> 1656650549 -0400	commit: changing keybindings. trying out neogit...again
+c4e5f53b7cac5cba161650635900068b326736fe 54c5c1ac524072a65b87623420ce7d2b55ae8d62 joselevelsup <hipnotickid12@gmail.com> 1657247847 -0400	commit: feat: adding hydra config for different keymaps
+54c5c1ac524072a65b87623420ce7d2b55ae8d62 32b914d1bab01cb9074b58952dca3dac778fa8ab joselevelsup <hipnotickid12@gmail.com> 1659747328 -0400	commit: feat: hopefully better lsp and file browsing
+32b914d1bab01cb9074b58952dca3dac778fa8ab 6bb2e6a402e43a79dae04c652b49d70df44c7e01 joselevelsup <hipnotickid12@gmail.com> 1659748428 -0400	commit: chore: reorganizing plugins and changing formatting in hydraconfig
+6bb2e6a402e43a79dae04c652b49d70df44c7e01 cc5d6edad554ef7afbbf06c968e8ce9378b15eba joselevelsup <hipnotickid12@gmail.com> 1659748999 -0400	commit: fix: editing readme. Hopefully it looks cool
+cc5d6edad554ef7afbbf06c968e8ce9378b15eba 1d84a64b48a738181aa5d65c7a47c744b8d83ff5 joselevelsup <hipnotickid12@gmail.com> 1659749064 -0400	commit: fix: editing spaces in README
+1d84a64b48a738181aa5d65c7a47c744b8d83ff5 c73df6ca69ac1a53c337cd97170429058b3fe7be joselevelsup <hipnotickid12@gmail.com> 1659749134 -0400	commit: fix: altering again
+c73df6ca69ac1a53c337cd97170429058b3fe7be 7835cbe6baeef3386f834ac810b8b51b1506a1c5 joselevelsup <hipnotickid12@gmail.com> 1659749173 -0400	commit: fix: one more time...
+7835cbe6baeef3386f834ac810b8b51b1506a1c5 53840ad5ff036531f1f4b88633e0e1e7dcbc5151 joselevelsup <hipnotickid12@gmail.com> 1659751347 -0400	commit: fix: forgot to remove the telescope project require
