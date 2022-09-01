@@ -4,3 +4,5 @@
 - Editor: Neovim (Best fucking editor hands down, my opinion of course)
 - Wallpapers: Just a bunch of wallpapers I consider to be dope. All SFW
 
+
+Managed by [ chezmoi ](https://www.chezmoi.io/)
