@@ -132,7 +132,7 @@ keys.globalkeys = gears.table.join(
    -- launch rofi
    awful.key({modkey}, "w",
       function()
-				awful.spawn("/home/skippy/.config/rofi/launchers/misc/launcher.sh")
+				awful.spawn("/home/skippy/.config/rofi/launchers/type-1/launcher.sh")
       end,
       {description = "application launcher", group = "launcher"}
    ),
@@ -211,7 +211,7 @@ keys.globalkeys = gears.table.join(
    awful.key({modkey}, "Escape",
       function()
          -- emit signal to show the exit screen
-         awful.spawn("/home/skippy/.config/rofi/powermenu/powermenu.sh")
+         awful.spawn("/home/skippy/.config/rofi/powermenu/type-1/powermenu.sh")
       end,
       {description = "toggle exit screen", group = "hotkeys"}
    ),

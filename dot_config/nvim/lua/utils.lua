@@ -1,7 +1,7 @@
 local M = {}
 
 function M.cmd(command)
-   return table.concat({ '<Cmd>', command, '<CR>' })
+   return table.concat({ '<cmd>', command, '<CR>' })
 end
 
 function M.keymapper(keymap, options, buffer)

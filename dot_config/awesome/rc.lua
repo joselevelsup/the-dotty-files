@@ -70,7 +70,7 @@ local function run_once(cmd_arr)
 	end
 end
 
-run_once({ "unclutter -root", "wal -R &", "picom -b &" }) -- comma-separated entries
+run_once({ "unclutter -root", "picom -b &", "sh ~/.fehbg &", "wal -R &" }) -- comma-separated entries
 
 -- This function implements the XDG autostart specification
 --[[
