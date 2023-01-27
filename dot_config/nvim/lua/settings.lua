@@ -15,7 +15,9 @@ local config = {
     expandtab = true,
     clipboard = "unnamedplus",
     cmdheight = 0,
-    guicursor = "i:block"
+    guicursor = "i:block",
+    splitbelow = true,
+    splitright = true
   },
   go = {
     encoding = 'utf-8',

@@ -38,8 +38,8 @@ function M.config()
     ["<leader>"] = { cmd("Telescope find_files previewer=false hidden=true theme=dropdown"), "Search the chaos" },
     f = { cmd("Fern . -drawer -toggle"), "Browse project wares"},
     p = { cmd("Telescope workspaces hidden=true theme=dropdown"), "Look at your projects"},
-    v = { cmd("FocusSplitRight cmd Fern ."), "Browse project file wares...VERTICALLY!!!" },
-    s = { cmd("FocusSplitDown cmd Fern ."), "Browse project file wares...HORIZONTALLY!!!"},
+    v = { cmd("vs | Fern ."), "Browse project file wares...VERTICALLY!!!" },
+    s = { cmd("sp | Fern ."), "Browse project file wares...HORIZONTALLY!!!"},
     g = { cmd("Telescope live_grep"), "What you looking for?"},
   }
 
@@ -63,10 +63,9 @@ function M.config()
     j = { "<C-w>j", "Duck down"},
     k = { "<C-w>k", "Jump up"},
     l = { "<C-w>l", "Strafe to the right"},
-    v = { cmd("FocusSplitRight"), "Vertical split"},
-    s = { cmd("FocusSplitDown"), "Horizontal split"},
-    S = { cmd("FocusSplitNicely"), "Split Nicely based on Golden Ratio?"},
-    ["="] = { cmd("FocusEqualise"), "Equalize the splits"},
+    v = { cmd("vs"), "Vertical split"},
+    s = { cmd("sp"), "Horizontal split"},
+    ["="] = { "<C-w>=", "Equalize the splits"},
   }
 
   local terminalKeys = {
@@ -76,6 +75,7 @@ function M.config()
     s = { cmd("ToggleTerm direction=horizontal"), "Open a new terminal...HORIZONTALLY!!!"},
   }
 
+  --Just removing arrow keys and making sure space does nothing but be the leader key
   local keymaps = {
     {mode = "n", stroke = "<Space>", cmd = "<NOP>", notCmd = true},
     {mode = "n", stroke = "<Up>", cmd = "<NOP>", notCmd = true},
@@ -86,6 +86,7 @@ function M.config()
     {mode = "i", stroke = "<Down>", cmd = "<NOP>", notCmd = true},
     {mode = "i", stroke = "<Left>", cmd = "<NOP>", notCmd = true},
     {mode = "i", stroke = "<Right>", cmd = "<NOP>", notCmd = true},
+    -- Actually this makes K and J (after highlighting in Visual Line) moves said line up or down
     {mode = "x", stroke = "K", cmd = ":move \'<-2<CR>gv-gv", notCmd = true},
     {mode = "x", stroke = "J", cmd = ":move \'>+1<CR>gv-gv", notCmd = true}
   }
@@ -98,7 +99,7 @@ function M.config()
       t = tabKeys,
       w = windowKeys,
       o = terminalKeys,
-      g = { function() toggleLazygit() end, "Opens Lazygit" }
+      g = { function() toggleLazygit() end, "Opens Lazygit" },
     }
   })
 end

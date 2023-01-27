@@ -8,8 +8,12 @@ local M = {
     'hrsh7th/cmp-buffer',
     'L3MON4D3/LuaSnip',
     'jose-elias-alvarez/null-ls.nvim',
-    "SmiteshP/nvim-navic",
     "ray-x/lsp_signature.nvim",
+    {
+      "rmagatti/goto-preview",
+      config = true
+    }
+    
   },
   event = "BufReadPre"
 }
@@ -150,22 +154,27 @@ function M.config()
   })
 
   local lspServers = require("lspconfig")
+  local navic = require("nvim-navic")
 
   local function onAttach(client, bufnr)
     local opts = { noremap = true, silent = true }
 
     local keymap = {
       { mode = "n", stroke = "gD", cmd = "lua vim.lsp.buf.declaration()" },
-      { mode = "n", stroke = "gd", cmd = "lua vim.lsp.buf.definition()" },
+      { mode = "n", stroke = "gd", cmd = "lua require('goto-preview').goto_preview_definition()" },
+      { mode = "n", stroke = "gi", cmd = "lua require('goto-preview').goto_preview_implementation()" },
+      { mode = "n", stroke = "gr", cmd = "lua require('goto-preview').goto_preview_references()" },
+      { mode = "n", stroke = "gl", cmd = 'lua vim.diagnostic.open_float(0, { scope = "line", border = "single" })' },
       { mode = "n", stroke = "K", cmd = "lua vim.lsp.buf.hover()" },
-      { mode = "n", stroke = "gi", cmd = "lua vim.lsp.buf.implementation()" },
       { mode = "n", stroke = "<C-k>", cmd = "lua vim.lsp.buf.code_action()" },
-      { mode = "n", stroke = "gr", cmd = "lua vim.lsp.buf.references()" },
       { mode = "n", stroke = "[d", cmd = 'lua vim.diagnostic.goto_prev({ border = "rounded" })' },
       { mode = "n", stroke = "]d", cmd = 'lua vim.diagnostic.goto_next({ border = "rounded" })' },
-      { mode = "n", stroke = "gl", cmd = 'lua vim.diagnostic.open_float(0, { scope = "line", border = "single" })' },
       { mode = "n", stroke = "<Leader>q", cmd = "lua vim.diagnostic.setloclist()" }
     }
+
+    if client.server_capabilities.documentSymbolProvider then
+      navic.attach(client, bufnr)
+    end
 
     setup_diags()
 

@@ -24,7 +24,6 @@ end
 
 function M.config()
   local lualine = require("lualine")
-  local navic = require("nvim-navic")
   local icons = require("nvim-web-devicons")
 
   lualine.setup({
@@ -41,25 +40,9 @@ function M.config()
       component_separators = '',
       section_separators = ''
     },
-    winbar = {
-      lualine_a = {{ navic.get_location, cond = navic.is_available }},
-      lualine_b = {},
-      lualine_c = {},
-      lualine_x = {},
-      lualine_y = {},
-      lualine_z = {}
-    },
-    inactive_winbar = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = {'filename'},
-      lualine_x = {},
-      lualine_y = {},
-      lualine_z = {}
-    },
     sections = {
-      lualine_a = { {'mode', fmt = function(str) return str:sub(1,3) end} },
-      lualine_b = {{"filename"}, { "branch" }},
+      lualine_a = {{ 'mode', fmt = function(str) return str:sub(1,3) end }},
+      lualine_b = {{ "filename" }, { "branch" }},
       lualine_c = { diagnostics },
       lualine_x = {
         {'encoding'},
@@ -76,7 +59,7 @@ function M.config()
         }
       },
       lualine_y = { progress },
-      lualine_z = { {'location'} }
+      lualine_z = {{ 'location' }}
     },
   })
 end

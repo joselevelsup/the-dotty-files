@@ -1,7 +1,8 @@
 return {
   {
     "windwp/nvim-autopairs",
-    config = true
+    config = true,
+    event = "BufReadPost"
   },
   {
     'lambdalisue/fern.vim',
@@ -12,11 +13,6 @@ return {
     },
   },
   {
-    "beauwilliams/focus.nvim",
-    config = true,
-    event = "BufRead",
-  },
-  {
     "RRethy/vim-illuminate",
     event = "BufReadPost",
     config = function()
@@ -24,7 +20,24 @@ return {
     end
   },
   {
+    "utilyre/barbecue.nvim",
+    version = "*",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "SmiteshP/nvim-navic",
+    },
+    config = function()
+      require("barbecue").setup({
+        attach_navic = false,
+        show_dirname = false,
+        show_modified = true,
+      })
+    end,
+    event = "BufReadPre"
+  },
+  {
     "SmiteshP/nvim-navic",
+    lazy = true,
     config = function()
       vim.g.navic_silence = false
       require("nvim-navic").setup({
@@ -83,20 +96,20 @@ return {
   },
   {
     "akinsho/toggleterm.nvim",
-    config = true
+    config = true,
+    event = "VimEnter"
   },
-  'mrjones2014/smart-splits.nvim',
-	"alvan/vim-closetag",
-	'editorconfig/editorconfig-vim',
-	"lukas-reineke/indent-blankline.nvim",
-	'jparise/vim-graphql',
   {
-    'rebelot/kanagawa.nvim',
-    config = function()
-      vim.cmd([[ colorscheme kanagawa ]])
-    end
+    'mrjones2014/smart-splits.nvim',
+    event = "BufRead"
   },
-	'Domeee/mosel.nvim',
+  {
+    "alvan/vim-closetag",
+    ft = "html,jsx,ts,tsx"
+  },
+  'editorconfig/editorconfig-vim',
+	"lukas-reineke/indent-blankline.nvim",
+	-- 'jparise/vim-graphql',
   {
     'natecraddock/workspaces.nvim',
     config = function()
@@ -111,6 +124,34 @@ return {
       })
     end,
     event = "VimEnter"
+  },
+  {
+    'toppair/peek.nvim',
+    ft = "md",
+    build = 'deno task --quiet build:fast',
+    init = function()
+      vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
+      vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
+    end,
+    config = function()
+      require('peek').setup({
+        auto_load = true,
+        close_on_bdelete = true,
+        syntax = true,
+        theme = 'dark',
+        update_on_change = true,
+        throttle_at = 200000,
+        throttle_time = 'auto',
+      })
+    end
+  },
+  {
+    "declancm/maximize.nvim",
+    config = true,
+    event = "BufReadPost"
+  },
+  {
+    "ThePrimeagen/vim-be-good"
   }
 }
 
