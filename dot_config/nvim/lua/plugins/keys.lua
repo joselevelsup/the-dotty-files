@@ -10,29 +10,6 @@ local M = {
 function M.config()
   local whichKey = require("which-key")
 
-  local Terminal  = require('toggleterm.terminal').Terminal
-  local lazygitTerm = Terminal:new({
-    cmd = "lazygit",
-    dir = "git_dir",
-    direction = "float",
-    float_opts = {
-      border = "double",
-    },
-    -- function to run on opening the terminal
-    on_open = function(term)
-      vim.cmd("startinsert!")
-      vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", cmd("close"), {noremap = true, silent = true})
-    end,
-    -- function to run on closing the terminal
-    on_close = function(term)
-      vim.cmd("startinsert!")
-    end,
-  })
-
-  local function toggleLazygit()
-    lazygitTerm:toggle()
-  end
-
   local fileKeys = {
     name = "+file",
     ["<leader>"] = { cmd("Telescope find_files previewer=false hidden=true theme=dropdown"), "Search the chaos" },
@@ -48,7 +25,7 @@ function M.config()
     b = { cmd("Telescope buffers previewer=false theme=ivy"), "Look at your current arsenal" },
     n = { cmd("bn"), 'Next Buffer'},
     p = { cmd("bp"), "Previous Buffer"},
-  }
+ }
 
   local tabKeys = {
     name = "+tab",
@@ -70,9 +47,9 @@ function M.config()
 
   local terminalKeys = {
     name = "+term",
-    t = { cmd("ToggleTerm"), "Open a new terminal"},
-    v = { cmd("ToggleTerm direction=vertical"), "Open a new terminal...VERTICALLY!!!"},
-    s = { cmd("ToggleTerm direction=horizontal"), "Open a new terminal...HORIZONTALLY!!!"},
+    t = { cmd("term"), "Opens a new Terminal"},
+    v = { cmd("vsp | term"), "Open a new terminal...VERTICALLY!!!"},
+    s = { cmd("sp | term"), "Open a new terminal...HORIZONTALLY!!!"},
   }
 
   --Just removing arrow keys and making sure space does nothing but be the leader key
@@ -88,7 +65,8 @@ function M.config()
     {mode = "i", stroke = "<Right>", cmd = "<NOP>", notCmd = true},
     -- Actually this makes K and J (after highlighting in Visual Line) moves said line up or down
     {mode = "x", stroke = "K", cmd = ":move \'<-2<CR>gv-gv", notCmd = true},
-    {mode = "x", stroke = "J", cmd = ":move \'>+1<CR>gv-gv", notCmd = true}
+    {mode = "x", stroke = "J", cmd = ":move \'>+1<CR>gv-gv", notCmd = true},
+    {mode = "t", stroke = "<esc>", cmd = [[<C-\><C-n>]], notCmd = true}
   }
   keymapper(keymaps, { noremap = true, silent = true }, nil)
 
@@ -99,7 +77,7 @@ function M.config()
       t = tabKeys,
       w = windowKeys,
       o = terminalKeys,
-      g = { function() toggleLazygit() end, "Opens Lazygit" },
+      g = { cmd("tab G"), "Opens Fugitive" },
     }
   })
 end

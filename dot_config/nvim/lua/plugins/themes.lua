@@ -1,15 +1,19 @@
 return {
+  "folke/tokyonight.nvim",
+  'rebelot/kanagawa.nvim',
+  'Domeee/mosel.nvim',
   {
-    "folke/tokyonight.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = false,
+    priority = 1000,
     config = function()
-      vim.cmd([[ colorscheme tokyonight-night ]])
+      vim.cmd([[colorscheme catppuccin-mocha]])
     end
   },
   {
-    'rebelot/kanagawa.nvim',
+    "bluz71/vim-moonfly-colors",
+    name = "moonfly",
   },
-  {
-    'Domeee/mosel.nvim',
-  }
 }
 

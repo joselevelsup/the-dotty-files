@@ -20,12 +20,20 @@ require("lazy").setup("plugins", {
   },
   install = {
     colorscheme = {
-      "kanagawa"
+      "tokyonight",
+      "kanagawa",
     }
   },
   performance = {
     rtp = {
       disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "rplugin",
+        "tarPlugin",
+        "tohtml",
+        "zipPlugin",
         "netrwPlugin",
         "tutor"
       }

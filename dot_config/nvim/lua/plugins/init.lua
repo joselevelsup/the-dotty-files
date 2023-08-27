@@ -1,4 +1,5 @@
 return {
+  "tpope/vim-fugitive",
   {
     "windwp/nvim-autopairs",
     config = true,
@@ -95,11 +96,6 @@ return {
     event = "BufReadPost"
   },
   {
-    "akinsho/toggleterm.nvim",
-    config = true,
-    event = "VimEnter"
-  },
-  {
     'mrjones2014/smart-splits.nvim',
     event = "BufRead"
   },
@@ -109,7 +105,6 @@ return {
   },
   'editorconfig/editorconfig-vim',
 	"lukas-reineke/indent-blankline.nvim",
-	-- 'jparise/vim-graphql',
   {
     'natecraddock/workspaces.nvim',
     config = function()
@@ -150,8 +145,5 @@ return {
     config = true,
     event = "BufReadPost"
   },
-  {
-    "ThePrimeagen/vim-be-good"
-  }
 }
 

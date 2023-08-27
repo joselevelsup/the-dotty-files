@@ -22,7 +22,9 @@ local M = {
           "norg",
           "org",
           "svelte",
-          "tsx"
+          "tsx",
+          "prisma",
+          "v"
         },
         sync_install = false,
         highlight = {

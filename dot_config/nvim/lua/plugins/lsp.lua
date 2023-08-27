@@ -13,7 +13,6 @@ local M = {
       "rmagatti/goto-preview",
       config = true
     }
-    
   },
   event = "BufReadPre"
 }
@@ -138,13 +137,12 @@ function M.config()
 
 
   local installedLSPs = {
-    "sumneko_lua",
+    "lua_ls",
     "gopls",
     "tsserver",
     "dockerls",
     "prismals",
-    "haxe_language_server",
-    "svelte"
+    "rust_analyzer",
   }
 
   require("mason").setup();
@@ -155,6 +153,7 @@ function M.config()
 
   local lspServers = require("lspconfig")
   local navic = require("nvim-navic")
+
 
   local function onAttach(client, bufnr)
     local opts = { noremap = true, silent = true }
@@ -182,13 +181,37 @@ function M.config()
   end
 
   local local_capabilities = vim.lsp.protocol.make_client_capabilities()
+  local cmp_lsp = require('cmp_nvim_lsp')
+
+  -- For the v-analyzer
+  require('lspconfig.configs').v_analyzer = {
+    default_config = {
+      name = 'v-analyzer',
+      cmd = {'v-analyzer', '--stdio'},
+      filetypes = {'v', 'vsh', 'vlang'},
+      root_dir = require('lspconfig.util').root_pattern({'.git', 'v.mod', '.v-analyzer'})
+    }
+  }
 
   for _, lsp in ipairs(installedLSPs) do
-    lspServers[lsp].setup {
+    lspServers[lsp].setup({
       on_attach = onAttach,
-      capabilities = require('cmp_nvim_lsp').default_capabilities(local_capabilities)
-    }
+      capabilities = cmp_lsp.default_capabilities(local_capabilities),
+      single_file_support = true
+    })
   end
+
+  lspServers.gleam.setup({
+    on_attach = onAttach,
+    capabilities = cmp_lsp.default_capabilities(local_capabilities),
+    single_file_support = true
+  })
+
+  lspServers.v_analyzer.setup({
+    on_attach = onAttach,
+    capabilities = cmp_lsp.default_capabilities(local_capabilities),
+    single_file_support = true
+  })
 
   local null_ls = require("null-ls")
   local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

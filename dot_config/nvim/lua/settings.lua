@@ -38,6 +38,8 @@ vim.api.nvim_create_autocmd("FileType", { pattern = "fern", command = "call glyp
 vim.api.nvim_create_autocmd("FileType", { pattern = "fern", command = "setlocal nonu", group = group });
 vim.api.nvim_create_autocmd("FileType", { pattern = "fern", command = "setlocal nornu", group = group });
 
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, { pattern = "*.v", command = "setfiletype vlang" });
+
 vim.g["fern#renderer"] = "nvim-web-devicons"
 vim.g.material_style = "deep ocean",
 
